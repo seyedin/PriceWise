@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: PriceWise Auth
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pricewise-auth-db
+    username: auth_user
+    password: auth_pass
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
