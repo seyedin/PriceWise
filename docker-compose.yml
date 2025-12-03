@@ -1,0 +1,30 @@
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: pricewise-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pricewise-postgres-data:/var/lib/postgresql/data # Volume → persistent storage for Postgres data
+    networks:
+      - pricewise-net   # Network → internal communication between containers
+
+  redis:
+    image: redis:7
+    container_name: pricewise-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - pricewise-net    # Network → allows Redis to talk to other services
+
+# Volume section: defines persistent storage outside container lifecycle
+volumes:
+  pricewise-postgres-data:  # keeps database data safe even if container is removed
+
+# Network section: defines a shared internal network for all services
+networks:
+  pricewise-net:  # enables containers to communicate using service names
