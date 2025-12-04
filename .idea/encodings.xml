@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/pricewise-aggregator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pricewise-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pricewise-compare/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pricewise-discovery/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pricewise-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pricewise-group/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pricewise-list/src/main/java" charset="UTF-8" />
+  </component>
+</project>

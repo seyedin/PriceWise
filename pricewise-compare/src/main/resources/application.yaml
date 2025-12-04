@@ -1,3 +1,43 @@
+server:
+  port: 8084
+  # Port number for Compare service
+
 spring:
   application:
-    name: PriceWise Compare
+    name: PRICEWISE-COMPARE
+    # Service name for Eureka registration
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pricewise_compare_db
+    # Database connection URL
+    # Use "localhost" when running from IntelliJ (outside Docker)
+    # Use "postgres" when running inside Docker network (service name in docker-compose)
+    # url: jdbc:postgresql://postgres:5432/pricewise_compare_db
+    username: compare_user
+    # Database username
+    password: compare_pass
+    # Database password
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      # Auto create or update tables
+    show-sql: true
+    # Show SQL queries in logs
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Use PostgreSQL dialect
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      # Eureka server URL
+
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+    # Heartbeat interval in seconds, Service sends a renewal every 30 seconds to Eureka
+    leaseExpirationDurationInSeconds: 90
+    # Expiration duration in seconds, If no heartbeat is received within 90 seconds, Eureka removes the service
+

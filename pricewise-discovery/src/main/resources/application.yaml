@@ -1,0 +1,25 @@
+server:
+  port: 8761
+  # Port number where Eureka server runs
+
+spring:
+  application:
+    name: PriceWise Discovery
+    # Service name shown in Eureka dashboard
+
+eureka:
+  client:
+    register-with-eureka: false
+    # Do not register itself (it is the server)
+    fetch-registry: false
+    # Do not fetch registry (it is the server)
+  server:
+    enable-self-preservation: true
+    # Protect against accidental removal of services
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+        # Enable health and info endpoints
